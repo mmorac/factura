@@ -7,7 +7,30 @@
 {% endblock %}
 
 {% block body %}
-
+  <div class="elementos">
+    <form action="{{ url_for('factura') }}" method="post">
+      <table>
+        <tr>
+          <td class="fechas">
+            <input type="date" id="fechainicio" name="fechainicio" class="seleccionarfecha">Fecha de inicio</input>
+          </td>
+          <td class="fechas">
+            <input type="date" id="fechafin" name="fechafin" class="seleccionarfecha">Fecha de cierre</input>
+          </td>
+          <td class="fechas">
+               <input type="submit" value="Actualizar">
+          </td>
+        </tr>
+      </table>
+    </form>
+  </div>
+  <div class="contenedor">
   {{codigo}}
-
+  </div>
+  <div>
+    <form action="{{ url_for('imprimir')}}" method="post">
+      <input type="hidden" value="" name="tabla"></input>
+      <input type="submit" value="Imprimir"></input>
+     </form>
+   </div>
 {% endblock %}
