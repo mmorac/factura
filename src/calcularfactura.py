@@ -30,3 +30,10 @@ def calcularfactura(fecha_inicio, fecha_fin):
             sumar.append(tabla.columns[i])
 
     tabla["Total"] = tabla[sumar].sum(axis=1)
+    sumar.insert(0, "Rate")
+    sumar.insert(0, "Resource Name")
+    sumar.insert(len(sumar), "Total")
+
+    resultado = tabla[sumar]
+
+    return resultado

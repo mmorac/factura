@@ -5,7 +5,6 @@ def obtenerhoras(archivo):
     #Esta función leerá un archivo de Excel y obtendrá la información para retornarla como Dataframe
     df = pd.read_excel(archivo, "Hours")
     df = df.set_index(df["Resource Name"])
-    df = df.drop(["Resource Name"], axis=1)
     df = df.fillna(0)
 
     cols = []
